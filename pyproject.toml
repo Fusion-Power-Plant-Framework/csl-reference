@@ -32,6 +32,23 @@ test = [
   "pytest-json-report",
 ]
 
+[tool.hatch.envs.default]
+features = ["test", "lint"]
+
+[tool.hatch.envs.test]
+features = ["test"]
+
+[tool.hatch.envs.test.scripts]
+tests      = "pytest {args:tests}"
+tests-cov  = "pytest --cov csl_reference --cov-report html:htmlcov --cov-report xml {args:tests}"
+
+[tool.hatch.envs.lint]
+detached     = true                           # Don't inherit from default (does not download project dependencies)
+dependencies = ["pre-commit", "ruff","ty"]
+[tool.hatch.envs.lint.scripts]
+fmt    = ["pre-commit run --all-files --hook-stage manual"]
+
+
 [tool.ty.terminal]
 output-format = "concise"
 
