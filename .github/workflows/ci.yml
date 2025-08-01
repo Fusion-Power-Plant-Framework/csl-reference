@@ -19,7 +19,7 @@ jobs:
           python-version: "3.11"
 
       - name: Lint
-        run: hatch run lint:fmt
+        uses: Fusion-Power-Plant-Framework/fppf-actions/hatch-lint@main
 
   pytest:
     runs-on: ubuntu-latest
