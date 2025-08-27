@@ -3,6 +3,16 @@
 # SPDX-License-Identifier: MIT
 """Package to represent references."""
 
+import logging
+
 from csl_reference._reference import DateVariable, NameVariable, Reference, ReferenceType
 
-__all__ = ["DateVariable", "NameVariable", "Reference", "ReferenceType"]
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.WARNING)
+
+__all__ = [
+    "DateVariable",
+    "NameVariable",
+    "Reference",
+    "ReferenceType",
+]
