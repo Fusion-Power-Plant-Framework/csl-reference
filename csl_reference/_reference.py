@@ -21,10 +21,7 @@ from citeproc import (
 from citeproc.source.json import CiteProcJSON
 from pydantic import BaseModel, Field
 
-logging.basicConfig()
-logger = logging.getLogger("reference")
-logger.setLevel(logging.INFO)
-
+logger = logging.getLogger(__name__).parent
 
 __all__ = ["DateVariable", "NameVariable", "Reference", "ReferenceType"]
 
