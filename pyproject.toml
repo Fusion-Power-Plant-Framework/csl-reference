@@ -20,6 +20,20 @@ dependencies = [
     "citeproc-py>=0.6.0",
     "pydantic>=2.9.2",
 ]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Scientific/Engineering",
+]
+
+[project.urls]
+Source        = "https://github.com/Fusion-Power-Plant-Framework/csl-reference"
+Documentation = "https://github.com/Fusion-Power-Plant-Framework/csl-reference#readme"
+Issues        = "https://github.com/Fusion-Power-Plant-Framework/csl-reference/issues"
 
 
 [project.optional-dependencies]
