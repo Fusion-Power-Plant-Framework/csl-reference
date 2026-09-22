@@ -339,7 +339,7 @@ class Reference(_CslBaseModel):
     def _make_bib(self) -> CitationStylesBibliography:
         sources = self._make_citeproc_source()
         bib = CitationStylesBibliography(
-            style=CitationStylesStyle("harvard1", validate=False),
+            style=CitationStylesStyle("harvard-cite-them-right", validate=False),
             source=sources,
             formatter=formatter.plain,
         )

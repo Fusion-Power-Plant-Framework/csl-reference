@@ -17,7 +17,7 @@ readme = "README.md"
 dynamic = ['version']
 requires-python = ">=3.11"
 dependencies = [
-    "citeproc-py>=0.6.0",
+    "citeproc-py>=0.10.3",
     "pydantic>=2.9.2",
 ]
 classifiers = [
