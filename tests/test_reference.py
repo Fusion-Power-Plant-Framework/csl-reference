@@ -42,7 +42,7 @@ class TestReference:
             "type": "webpage",
             field: "some_string",
             "chapter_number": 1,
-        })
+        })  # ty: ignore[invalid-argument-type]
 
         serialized = ref.model_dump(exclude_unset=True, by_alias=True)
 

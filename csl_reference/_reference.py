@@ -26,7 +26,7 @@ logger = logging.getLogger(__name__).parent
 __all__ = ["DateVariable", "NameVariable", "Reference", "ReferenceType"]
 
 
-class ReferenceType(str, enum.Enum):
+class ReferenceType(enum.StrEnum):
     """String enumeration of the possible values for a reference type."""
 
     article = "article"
@@ -89,10 +89,15 @@ class _CslBaseModel(BaseModel, populate_by_name=True):
             if (field_info := type(self).model_fields.get(kwarg)) and (
                 field_info.alias in kwargs
             ):
-                logger.warning(
+                ref = (
+                    f"for reference with ID {self.id}. "
+                    if isinstance(self, Reference)
+                    else ""
+                )
+                logger.warning(  # ty: ignore[unresolved-attribute]
                     f"Fields {type(self).__name__}.{kwarg} and "
-                    f"{type(self).__name__}.{field_info.alias} are both set for "
-                    f"reference with ID {self.id}. "
+                    f"{type(self).__name__}.{field_info.alias} are both set "
+                    f"{ref}"
                     f"Ignoring {type(self).__name__}.{kwarg}."
                 )
 

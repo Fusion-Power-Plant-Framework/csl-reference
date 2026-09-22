@@ -15,7 +15,7 @@ description = "Reference all of the things"
 license = "MIT"
 readme = "README.md"
 dynamic = ['version']
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 dependencies = [
     "citeproc-py>=0.6.0",
     "pydantic>=2.9.2",
@@ -52,7 +52,7 @@ features = ["test", "lint"]
 [tool.hatch.envs.test]
 features = ["test"]
 [[tool.hatch.envs.test.matrix]]
-python = ["3.10", "3.11", "3.12", "3.13"]
+python = ["3.11", "3.12", "3.13", "3.14"]
 
 [tool.hatch.envs.test.scripts]
 tests      = "pytest {args:tests}"
@@ -72,9 +72,10 @@ output-format = "concise"
 unresolved-import = "ignore"
 
 [tool.ruff]
-target-version = "py310"
+target-version = "py311"
 line-length = 89
-output-format = "concise"
+output-format= "concise"
+output-prefer-rule-codes = true
 exclude = [
   ".git",
   "__pycache__",
@@ -114,6 +115,9 @@ ignore = [
   "TRY003",  # put error messages in error class
   "FURB152", # 3.14 != pi
   "ERA",  # remove commented out code
+  "RUF105",  # keep codes
+  "RUF106",
+  "RUF201",
 ]
 
 [tool.ruff.lint.per-file-ignores]
@@ -135,6 +139,7 @@ ignore = [
   "S101",
   "TID252",
 ]
+"__init__.py" = ["RUF067"]
 
 [tool.ruff.lint.isort]
 known-first-party = ["csl_reference"]
