@@ -95,7 +95,7 @@ class TestReference:
             "and Journal of Science"
         ) in str_ref
         assert "26(151)" in str_ref
-        assert "pp.1–25" in str_ref  # noqa: RUF001
+        assert "pp. 1–25" in str_ref  # noqa: RUF001
 
     def test_repr_excludes_unset_fields(self):
         ref = Reference(
