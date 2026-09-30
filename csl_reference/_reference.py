@@ -90,14 +90,14 @@ class _CslBaseModel(BaseModel, populate_by_name=True):
                 field_info.alias in kwargs
             ):
                 ref = (
-                    f"for reference with ID {self.id}. "
+                    f"for reference with ID {self.id}"
                     if isinstance(self, Reference)
                     else ""
                 )
                 logger.warning(  # ty: ignore[unresolved-attribute]
                     f"Fields {type(self).__name__}.{kwarg} and "
                     f"{type(self).__name__}.{field_info.alias} are both set "
-                    f"{ref}"
+                    f"{ref}. "
                     f"Ignoring {type(self).__name__}.{kwarg}."
                 )
 
